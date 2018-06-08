@@ -1,0 +1,84 @@
+#include "stdafx.h"
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+
+
+class animal {
+public:
+	char name[10];
+	virtual void walk() {}
+	void naming(char name[10]) {
+		cout << "name your animal" << endl;
+		cin >> name;
+	};
+	void hunger(bool h) {
+		if (h == 0) cout << "cry" << endl;
+		else cout<<"..."<<endl;
+	}
+};
+
+
+
+class cat : public animal
+{
+public:
+	void voice()
+	{
+		cout << "meow meow" << endl;
+	}
+	
+};
+
+
+
+class dog : public animal
+{
+public:
+	void voice()
+	{
+		cout << "woof woof" << endl;
+	}
+};
+
+
+
+class parrot : public animal
+{
+public:
+	void voice()
+	{
+		cout << "weet weet" << endl;
+	}
+};
+
+
+
+int main()
+
+{
+	char name1[10], name2[10], name3[10];
+	bool hungry= 0 + rand() % 1;
+	cat kitty;
+	dog doggy;
+	parrot birb;
+	kitty.naming(name1);
+	kitty.voice();
+	doggy.naming(name2);
+	doggy.voice();
+	birb.naming(name3);
+	birb.voice();
+	cout << "lets check your animals" << endl;
+	kitty.hunger(hungry);
+	hungry = 0 + rand() % 1;
+	doggy.hunger(hungry);
+	hungry = 0 + rand() % 1;
+	birb.hunger(hungry);
+	hungry = 0 + rand() % 1;
+	system("pause");
+	return 0;
+
+}
